@@ -1,5 +1,8 @@
 import React from 'react';
 import {Text, Image, View, StyleSheet, Button} from 'react-native';
+import Colors from '../constants/colors';
+
+import MainButton from '../components/MainButton';
 
 const GameOverScreen = props => (
   <View style={styles.screen}>
@@ -11,9 +14,14 @@ const GameOverScreen = props => (
         resizeMode="cover"
       />
     </View>
-    <Text>Number of rounds:{props.roundsNumber} </Text>
-    <Text>Number was :{props.userNumber} </Text>
-    <Button title="NEW GAME" onPress={props.onRestart} />
+    <View style={styles.resultContainer}>
+      <Text style={styles.resultText}>
+        You nedded <Text style={styles.highlight}>{props.roundsNumber}</Text>{' '}
+        rounds to guess the number{' '}
+        <Text style={styles.highlight}>{props.userNumber}</Text>{' '}
+      </Text>
+    </View>
+    <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
   </View>
 );
 
@@ -35,6 +43,17 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     overflow: 'hidden',
     marginVertical: 30,
+  },
+  highlight: {
+    color: Colors.primary,
+  },
+  resultContainer: {
+    marginHorizontal: 20,
+    marginVertical: 5,
+  },
+  resultText: {
+    textAlign: 'center',
+    fontSize: 20,
   },
 });
 
