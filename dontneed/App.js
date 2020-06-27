@@ -16,12 +16,12 @@ import {
   StatusBar,
 } from 'react-native';
 
-import LoginScreen from './screens/LoginScreen';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 const App = () => {
   return (
     <View>
-      <LoginScreen />
+      <WelcomeScreen />
     </View>
   );
 };
