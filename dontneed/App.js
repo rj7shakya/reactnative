@@ -17,13 +17,10 @@ import {
 } from 'react-native';
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
 const App = () => {
-  return (
-    <View>
-      <WelcomeScreen />
-    </View>
-  );
+  return <ViewImageScreen />;
 };
 
 const styles = StyleSheet.create({});
