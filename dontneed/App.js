@@ -18,9 +18,13 @@ import {
 
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
+import AppButton from './app/components/AppButton';
+import Card from './app/components/Card';
+import ListingDetailsScreen from './app/components/ListingDetailsScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 const App = () => {
-  return <ViewImageScreen />;
+  return <MessagesScreen />;
 };
 
 const styles = StyleSheet.create({});
