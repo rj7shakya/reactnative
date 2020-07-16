@@ -7,14 +7,20 @@
  */
 
 import React, {useState} from 'react';
-import {StyleSheet} from 'react-native';
-import MessagesScreen from './app/screens/MessagesScreen';
+import {StyleSheet, Text, View, Button, Image} from 'react-native';
+
 import ListingEditScreen from './app/screens/ListingEditScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import AuthNavigator from './app/navigation/AuthNavigator';
 
 const App = () => {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+  );
 };
 
-const styles = StyleSheet.create({});
-
 export default App;
+
+const styles = StyleSheet.create({});
