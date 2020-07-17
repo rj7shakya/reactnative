@@ -15,7 +15,6 @@ const addListing = (listing, onUploadProgress) => {
   data.append('price', listing.price);
   data.append('categoryId', listing.category.value);
   data.append('description', listing.description);
-  console.log(listing.images[0]);
   listing.images.forEach((image, index) =>
     data.append('images', {
       uri: image,
@@ -26,7 +25,6 @@ const addListing = (listing, onUploadProgress) => {
 
   if (listing.location)
     data.append('location', JSON.stringify(listing.location));
-  console.log(data._parts[4]);
   const headers = {
     'Content-Type': 'multipart/form-data',
   };

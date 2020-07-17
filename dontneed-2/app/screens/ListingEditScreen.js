@@ -95,7 +95,6 @@ const ListingEditScreen = () => {
       (progress) => setProgress(progress),
     );
     setUploadVisible(false);
-    console.log('result', result.originalError);
     if (!result.ok) return alert('Could not save the listing');
     alert('Sucess');
   };

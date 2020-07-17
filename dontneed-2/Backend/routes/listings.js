@@ -69,7 +69,6 @@ router.post(
     listing.images = req.body.images.map((fileName) => ({fileName: fileName}));
     if (req.body.location) listing.location = JSON.parse(req.body.location);
     if (req.user) listing.userId = req.user.userId;
-    console.log(listing);
     store.addListing(listing);
 
     res.status(201).send(listing);
