@@ -4389,6 +4389,11 @@ jsx-ast-utils@^2.4.1:
     array-includes "^3.1.1"
     object.assign "^4.1.0"
 
+jwt-decode@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
+  integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -5804,6 +5809,16 @@ react-native-screens@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.9.0.tgz#ead2843107ba00fee259aa377582e457c74f1f3b"
   integrity sha512-5MaiUD6HA3nzY3JbVI8l3V7pKedtxQF3d8qktTVI0WmWXTI4QzqOU8r8fPVvfKo3MhOXwhWBjr+kQ7DZaIQQeg==
+
+react-native-secure-storage@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-secure-storage/-/react-native-secure-storage-0.1.2.tgz#5c04b27ce1125a6fd6e24f6c55d0d47ab0672059"
+  integrity sha512-LAuOZA2ZjVCVt+mMRE0cghsn0O6egHJk4Flp3pHC/mpDFxRmuhYKrqTruNFJD6Lhf4UtDLve+TPoD1et4KusTw==
+
+react-native-splash-screen@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
+  integrity sha512-Ls9qiNZzW/OLFoI25wfjjAcrf2DZ975hn2vr6U9gyuxi2nooVbzQeFoQS5vQcbCt9QX5NY8ASEEAtlLdIa6KVg==
 
 react-native-status-bar-height@^2.5.0:
   version "2.5.0"

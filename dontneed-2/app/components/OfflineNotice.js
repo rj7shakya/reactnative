@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import colors from '../config/colors';
 import {useNetInfo} from '@react-native-community/netinfo';
+import AppText from './AppText';
 
 const OfflineNotice = () => {
   const netInfo = useNetInfo();
@@ -24,9 +25,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     height: 50,
     justifyContent: 'center',
-    position: 'absolute',
     width: '100%',
-    zIndex: 1,
+    zIndex: 3,
   },
   text: {
     color: colors.white,
