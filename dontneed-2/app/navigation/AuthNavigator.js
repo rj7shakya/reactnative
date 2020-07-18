@@ -11,7 +11,7 @@ const AuthNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={routes.REGISTER}
+        name="Welcome"
         component={WelcomeScreen}
         options={{headerShown: false}}
       />

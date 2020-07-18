@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {StyleSheet, View, TouchableWithoutFeedback} from 'react-native';
 import colors from '../config/colors';
 import AppText from './AppText';
+import FastImage from 'react-native-fast-image';
 
 const Card = ({title, subTitle, imageUrl, onPress}) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image style={styles.image} source={{uri: imageUrl}} />
+        <FastImage style={styles.image} source={{uri: imageUrl}} />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>
