@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Fontisto';
 
 import Angular from './app/tabs/angular';
-import Reactt from './app/tabs/react';
 import Vue from './app/tabs/vue';
 import reactContext from './app/data/reactContext';
 import ReactStack from './app/stacks/ReactStack';
@@ -15,9 +14,9 @@ const reactData = [
   {id: 1, data: 'useState'},
   {id: 2, data: 'useEffect'},
   {id: 3, data: 'useContext'},
+  {id: 4, data: 'useReducer'},
+  {id: 5, data: 'useCustom'},
 ];
-
-useEffect;
 
 const App = () => {
   const [reactD, setReactD] = useState(reactData);

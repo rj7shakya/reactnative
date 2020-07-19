@@ -9,8 +9,14 @@ const ReactDetail = ({route, navigation}) => {
   const [text, setText] = useState(route.params.data);
   const {reactD, setReactD} = useContext(reactContext);
 
-  const update = (id, data) => {
-    console.log(id, data);
+  const update = (uid, data) => {
+    let newList = reactD.filter((data) => data.id !== uid);
+    newList = [...newList, {id: uid, data: data}];
+    newList.sort((a, b) => (a.id > b.id ? 1 : -1));
+    console.log(newList);
+    setReactD(newList);
+
+    navigation.navigate('list');
   };
 
   return (
