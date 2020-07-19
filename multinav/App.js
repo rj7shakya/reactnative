@@ -4,10 +4,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Fontisto';
 
-import Angular from './app/tabs/angular';
 import Vue from './app/tabs/vue';
 import reactContext from './app/data/reactContext';
 import ReactStack from './app/stacks/ReactStack';
+import AngularStack from './app/stacks/AngularStack';
 
 const Tab = createBottomTabNavigator();
 const reactData = [
@@ -15,7 +15,12 @@ const reactData = [
   {id: 2, data: 'useEffect'},
   {id: 3, data: 'useContext'},
   {id: 4, data: 'useReducer'},
-  {id: 5, data: 'useCustom'},
+];
+const vueData = [
+  {id: 1, data: 'v-html'},
+  {id: 2, data: 'v-bind'},
+  {id: 3, data: 'vuex'},
+  {id: 4, data: 'nuxt'},
 ];
 
 const App = () => {
@@ -26,7 +31,7 @@ const App = () => {
         <Tab.Navigator>
           <Tab.Screen
             name="Angular"
-            component={Angular}
+            component={AngularStack}
             options={{
               tabBarIcon: () => (
                 <Icon name="angularjs" color="#b52e31" size={20} />
@@ -35,7 +40,7 @@ const App = () => {
           />
           <Tab.Screen
             name="React"
-            children={ReactStack}
+            component={ReactStack}
             options={{
               tabBarIcon: () => <Icon name="react" color="#00d8ff" size={20} />,
             }}

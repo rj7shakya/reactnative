@@ -1,14 +1,40 @@
-import React, {useContext} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useContext, useEffect} from 'react';
+import {StyleSheet, Text, View, TouchableWithoutFeedback} from 'react-native';
 import AppText from '../components/Text';
 import reactContext from '../data/reactContext';
 import Line from '../components/line';
+import useAngular from '../data/useAngular';
 
-const Angular = () => {
+const Angular = ({navigation}) => {
+  const {angularData, setAngularData} = useAngular();
   const {reactD, setReactD} = useContext(reactContext);
+  useEffect(() => {
+    setAngularData([
+      ...angularData,
+      {
+        id: angularData[angularData.length - 1].id + 1,
+        data: angularData[Math.floor(Math.random() * angularData.length)].data,
+      },
+    ]);
+  }, []);
+
   return (
     <View>
       <AppText>Angular data</AppText>
+      <Line />
+      {angularData.map((data) => (
+        <TouchableWithoutFeedback
+          key={data.id}
+          onPress={() =>
+            navigation.navigate('listDetail', {
+              id: data.id,
+              data: data.data,
+              type: 'angular',
+            })
+          }>
+          <Text style={{textAlign: 'center'}}>{data.data}</Text>
+        </TouchableWithoutFeedback>
+      ))}
       <Line />
       <Line />
       <Line />

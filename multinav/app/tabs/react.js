@@ -11,11 +11,10 @@ const Reactt = ({navigation}) => {
     setReactD([
       ...reactD,
       {
-        id: reactD[reactD.length - 1].id + 2,
+        id: reactD[reactD.length - 1].id + 1,
         data: reactD[Math.floor(Math.random() * reactD.length)].data,
       },
     ]);
-    console.log(reactD);
   }, []);
 
   return (
@@ -25,7 +24,13 @@ const Reactt = ({navigation}) => {
       {reactD.map((data) => (
         <TouchableWithoutFeedback
           key={data.id}
-          onPress={() => navigation.navigate('listDetail', data)}>
+          onPress={() =>
+            navigation.navigate('listDetail', {
+              id: data.id,
+              data: data.data,
+              type: 'react',
+            })
+          }>
           <AppText>{data.data}</AppText>
         </TouchableWithoutFeedback>
       ))}

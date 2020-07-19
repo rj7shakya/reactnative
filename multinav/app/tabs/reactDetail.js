@@ -5,16 +5,26 @@ import {Input} from 'react-native-elements';
 import reactContext from '../data/reactContext';
 
 const ReactDetail = ({route, navigation}) => {
+  let data = null;
+  let setData = null;
   const [toEdit, setToEdit] = useState(false);
   const [text, setText] = useState(route.params.data);
-  const {reactD, setReactD} = useContext(reactContext);
+  if (route.params.type === 'angular') {
+    const {angularData, setAngularData} = useAngular();
+    data = angularData;
+    setData = setAngularData;
+  } else if (route.params.type === 'react') {
+    const {reactD, setReactD} = useContext(reactContext);
+    data = reactD;
+    setData = setReactD;
+  }
 
-  const update = (uid, data) => {
-    let newList = reactD.filter((data) => data.id !== uid);
-    newList = [...newList, {id: uid, data: data}];
+  const update = (uid, text) => {
+    let newList = data.filter((data) => data.id !== uid);
+    newList = [...newList, {id: uid, data: text}];
     newList.sort((a, b) => (a.id > b.id ? 1 : -1));
-    console.log(newList);
-    setReactD(newList);
+    console.log('newList', newList);
+    setData(newList);
 
     navigation.navigate('list');
   };
