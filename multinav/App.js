@@ -8,6 +8,7 @@ import Vue from './app/tabs/vue';
 import reactContext from './app/data/reactContext';
 import ReactStack from './app/stacks/ReactStack';
 import AngularStack from './app/stacks/AngularStack';
+import vueContext from './app/data/vueContext';
 
 const Tab = createBottomTabNavigator();
 const reactData = [
@@ -25,35 +26,42 @@ const vueData = [
 
 const App = () => {
   const [reactD, setReactD] = useState(reactData);
+  const [vueD, setVueD] = useState(vueData);
   return (
     <reactContext.Provider value={{reactD, setReactD}}>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen
-            name="Angular"
-            component={AngularStack}
-            options={{
-              tabBarIcon: () => (
-                <Icon name="angularjs" color="#b52e31" size={20} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="React"
-            component={ReactStack}
-            options={{
-              tabBarIcon: () => <Icon name="react" color="#00d8ff" size={20} />,
-            }}
-          />
-          <Tab.Screen
-            name="Vue"
-            component={Vue}
-            options={{
-              tabBarIcon: () => <Icon name="vuejs" color="#42b883" size={20} />,
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <vueContext.Provider value={{vueD, setVueD}}>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="Angular"
+              component={AngularStack}
+              options={{
+                tabBarIcon: () => (
+                  <Icon name="angularjs" color="#b52e31" size={20} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="React"
+              component={ReactStack}
+              options={{
+                tabBarIcon: () => (
+                  <Icon name="react" color="#00d8ff" size={20} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Vue"
+              component={Vue}
+              options={{
+                tabBarIcon: () => (
+                  <Icon name="vuejs" color="#42b883" size={20} />
+                ),
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </vueContext.Provider>
     </reactContext.Provider>
   );
 };

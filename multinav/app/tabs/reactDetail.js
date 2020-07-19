@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 import AppText from '../components/Text';
 import {Input} from 'react-native-elements';
 import reactContext from '../data/reactContext';
+import vueContext from '../data/vueContext';
 
 const ReactDetail = ({route, navigation}) => {
   let data = null;
@@ -17,6 +18,10 @@ const ReactDetail = ({route, navigation}) => {
     const {reactD, setReactD} = useContext(reactContext);
     data = reactD;
     setData = setReactD;
+  } else if (route.params.type === 'vue') {
+    const {vueD, setVueD} = useContext(vueContext);
+    data = vueD;
+    setData = setVueD;
   }
 
   const update = (uid, text) => {
