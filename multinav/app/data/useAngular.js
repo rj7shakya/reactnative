@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const angularD = [
   {id: 1, data: 'rxJs'},
@@ -9,10 +9,6 @@ const angularD = [
 
 export default useAngular = () => {
   const [angularData, setAngularData] = useState(angularD);
-
-  useEffect(() => {
-    console.log('angularData', angularData);
-  }, []);
 
   return {angularData, setAngularData};
 };

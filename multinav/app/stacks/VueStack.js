@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Reactt from '../tabs/react';
 import ReactDetail from '../tabs/reactDetail';
+import Vue from '../tabs/vue';
 
 const Stack = createStackNavigator();
 
@@ -11,7 +11,7 @@ const ReactStack = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="list"
-        component={Reactt}
+        component={Vue}
         options={{headerShown: false}}
       />
       <Stack.Screen name="listDetail" component={ReactDetail} />
